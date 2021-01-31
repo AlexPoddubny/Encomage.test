@@ -55,10 +55,9 @@
     
         protected function actionSort()
         {
-            $param['order'] = $_POST['column'];
-            $param['sort'] = $_POST['sort'];
-            $this->view->users = User::findAll($_POST);
-            $this->view->display(__DIR__ . '/../Views/users/tbody.php', false);
+            if ($this->view->users = User::findAll($_POST)) {
+                $this->view->display(__DIR__ . '/../Views/users/tbody.php', false);
+            }
         }
     
         protected function actionFilter()

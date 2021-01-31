@@ -28,7 +28,7 @@
             if ($param) {
                 if (isset($param['column'])){
                     $query .= ' ORDER BY ' . $param['column'];
-                    unset($param['order']);
+                    unset($param['column']);
                 }
                 if (isset($param['sort'])){
                     $query .= ' ' . $param['sort'];
